@@ -1,8 +1,10 @@
 from email import message
 from urllib import response
-import requests, pyttsx3, time, speech_recognition as sr, openai
+from dotenv import load_dotenv
+import requests, pyttsx3, time, speech_recognition as sr, openai, os
+load_dotenv()
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI")
 messages = [ {"role": "system", "content": 
               "You are a intelligent assistant."} ]
 
